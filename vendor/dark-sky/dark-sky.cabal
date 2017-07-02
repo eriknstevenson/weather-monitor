@@ -1,0 +1,51 @@
+name:                dark-sky
+version:             0.1.0.0
+synopsis:            Initial project template from stack
+description:         Please see README.md
+homepage:            https://github.com/peterstuart/dark-sky
+license:             MIT
+license-file:        LICENSE
+author:              Peter Stuart
+maintainer:          peter.l.stuart@gmail.com
+copyright:           2016 Peter Stuart
+category:            Web
+build-type:          Simple
+cabal-version:       >=1.10
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     DarkSky
+                     , DarkSky.App.Config
+                     , DarkSky.App.Config.ArgumentParser
+                     , DarkSky.App.Config.File
+                     , DarkSky.App.Output
+                     , DarkSky.Client
+                     , DarkSky.Request
+                     , DarkSky.Request.BlockType
+                     , DarkSky.Response
+                     , DarkSky.Response.Alert
+                     , DarkSky.Response.DataBlock
+                     , DarkSky.Response.DataPoint
+                     , DarkSky.Response.Flags
+                     , DarkSky.Response.Icon
+                     , DarkSky.Response.PrecipitationType
+                     , DarkSky.Types
+                     , DarkSky.Unit
+  build-depends:       base >= 4.7 && < 5
+                     , aeson
+                     , bytestring
+                     , containers
+                     , directory
+                     , either
+                     , http-conduit
+                     , optparse-applicative
+                     , scientific
+                     , text
+                     , time
+  default-language:    Haskell2010
+  ghc-options:         -Wall
+
+
+source-repository head
+  type:     git
+  location: https://github.com/peterstuart/dark-sky

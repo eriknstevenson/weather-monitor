@@ -1,0 +1,35 @@
+{
+  "people": [
+    {
+      "name": "Younghye",
+      "phonenumber": "+15403152756",
+      "subscriptions": [
+        "Norfolk"
+      ]
+    },
+    {
+      "name": "Erik",
+      "phonenumber": "+16304647518",
+      "subscriptions": [
+        "Williamsburg",
+      ]
+    }
+  ],
+  "locations": [
+    {
+      "latitude": 37.2707,
+      "name": "Williamsburg",
+      "longitude": -76.7075
+    },
+    {
+      "latitude": 36.8508,
+      "name": "Norfolk",
+      "longitude": -76.2859
+    },
+    {
+      "latitude": 36.8508,
+      "name": "Chicago",
+      "longitude": -76.2859
+    }
+  ]
+}
