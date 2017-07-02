@@ -125,6 +125,7 @@ optimizeSettings (Settings locations people) =
     allSubscriptions = concatMap _subscriptions people
     onlySubscribedToLocations = HM.filterWithKey (\location _ -> location `elem` allSubscriptions) locations
 
+getForecastFor :: Text -> Coordinate -> IO Response
 getForecastFor darkskyKey coord = 
     getForecast req
   where
@@ -142,7 +143,7 @@ rainIsForecasted :: Int -> Response -> Bool
 rainIsForecasted hours resp = 
     any (\dataPoint -> icon dataPoint `elem` [Just Rain, Just Sleet]) next12Hours
   where
-    next12Hours = fromMaybe [] (take hours . data' <$> hourly resp)
+    next12Hours = fromMaybe [] (take (hours - 2) . drop 2 . data' <$> hourly resp)
 
 notifySubscribers :: Text -> Configuration -> IO ()
 notifySubscribers location (Configuration twilioSid twilioToken _ settings) =
